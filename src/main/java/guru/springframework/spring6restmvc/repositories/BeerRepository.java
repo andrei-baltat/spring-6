@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * Created by jt, Spring Framework Guru.
  */
-public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
+public interface BeerRepository extends JpaRepository<Beer, UUID> {
 
     Page<Beer> findAllByBeerNameIsLikeIgnoreCase(String beerName, Pageable pageable);
 
