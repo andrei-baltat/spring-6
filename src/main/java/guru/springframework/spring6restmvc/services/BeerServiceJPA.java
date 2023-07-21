@@ -45,14 +45,14 @@ public class BeerServiceJPA implements BeerService {
         } else if (StringUtils.hasText(beerName) && beerStyle != null){
             beerPage = listBeersByNameAndStyle(beerName, beerStyle);
         } else {
-            beerPage = beerRepository.findAll();
+            beerPage = beerRepository.findAll(pageRequest);
         }
 
         if (showInventory != null && !showInventory) {
             beerPage.forEach(beer -> beer.setQuantityOnHand(null));
         }
 
-        return pageRequest.
+        return beerPage.map(beerMapper::beerToBeerDto);
     }
 
     public PageRequest buildPageRequest(Integer pageNumber, Integer pageSize) {

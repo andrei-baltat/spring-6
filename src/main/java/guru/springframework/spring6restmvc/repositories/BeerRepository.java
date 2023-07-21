@@ -5,13 +5,14 @@ import guru.springframework.spring6restmvc.model.BeerStyle;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.UUID;
 
 /**
  * Created by jt, Spring Framework Guru.
  */
-public interface BeerRepository extends JpaRepository<Beer, UUID> {
+public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
 
     Page<Beer> findAllByBeerNameIsLikeIgnoreCase(String beerName, Pageable pageable);
 
