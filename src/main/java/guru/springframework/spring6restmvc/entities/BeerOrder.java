@@ -62,6 +62,9 @@ public class BeerOrder {
 
     private String customerRef;
 
+    @ManyToOne
+    private Customer customer;
+
     @OneToMany(mappedBy = "beerOrder")
     private Set<BeerOrderLine> beerOrderLines;
 
