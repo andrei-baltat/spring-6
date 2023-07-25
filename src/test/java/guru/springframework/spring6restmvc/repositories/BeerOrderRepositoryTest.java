@@ -38,7 +38,7 @@ class BeerOrderRepositoryTest {
                 .customerRef("Test order")
                 .customer(testCustomer)
                 .build();
-        beerOrderRepository.saveAndFlush(beerOrder);
+        beerOrderRepository.save(beerOrder);
 
     }
 }

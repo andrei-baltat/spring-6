@@ -68,4 +68,6 @@ public class BeerOrderLine {
 
     @ManyToOne
     private Beer beers;
+
+
 }

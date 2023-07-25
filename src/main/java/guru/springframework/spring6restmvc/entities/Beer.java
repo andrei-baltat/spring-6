@@ -65,4 +65,10 @@ public class Beer {
     @OneToMany
     private Set<BeerOrderLine> beerOrderLines;
 
+    @ManyToMany
+    @JoinTable(name = "beer_category",
+            joinColumns = @JoinColumn(name = "beer_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories;
+
 }
